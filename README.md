@@ -7,12 +7,23 @@ The preferred method is to install Electron as a development dependency in your
 app:
 
 ```sh
-npm i
+npm install
 ```
 
-Build cross-platform apps (for win32) dependency lib:
+## Run
 
-```txt
-wine
-mono
+```sh
+npm start
+```
+
+## Build
+
+```sh
+npm run dist:windows
+```
+
+## Cross platform build
+
+```sh
+docker-compose up
 ```

@@ -1,33 +1,32 @@
-const { app, BrowserWindow, Memu, Menu } = require('electron')
-const path = require('path')
+const { app, BrowserWindow, Menu } = require("electron");
+const path = require("path");
 
-function createWindow () {
+function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    show: false
-  })
+    show: false,
+  });
 
-  win.maximize()
-  win.show()
+  win.maximize();
+  win.show();
 
-  const swaggerUiAssetPath = require('swagger-ui-dist').absolutePath()
-  win.loadFile(path.join(swaggerUiAssetPath, 'index.html'))
+  win.loadFile("index.html");
 }
 
 app.whenReady().then(() => {
-  createWindow()
-  Menu.setApplicationMenu(null)
+  createWindow();
+  // Menu.setApplicationMenu(null);
 
-  app.on('activate', () => {
+  app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
+      createWindow();
     }
-  })
-})
+  });
+});
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
   }
-})
+});

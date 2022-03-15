@@ -1,0 +1,23 @@
+---
+appId: com.example.app
+files:
+  - api-files/*
+  - main.js
+  - index.html
+fileAssociations:
+  - ext:
+      - ymlx
+    name: Plain Text
+    role: Editor
+directories:
+  output: dist
+win:
+  target: nsis
+linux:
+  target: deb
+  category: Office
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64

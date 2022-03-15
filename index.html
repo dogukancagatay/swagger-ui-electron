@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="SwaggerIU" />
+    <title>SwaggerUI</title>
+    <link rel="stylesheet" href="node_modules/swagger-ui-dist/swagger-ui.css" />
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+    <script src="node_modules/swagger-ui-dist/swagger-ui-bundle.js" crossorigin></script>
+    <script src="node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js" crossorigin></script>
+    <script>
+        window.onload = () => {
+            window.ui = SwaggerUIBundle({
+                //url: 'https://petstore3.swagger.io/api/v3/openapi.json',
+                urls: [
+                    {
+                        url: 'api-files/openapi_openweathermap.yml',
+                        name: 'Local File 1',
+                    },
+                    {
+                        url: 'api-files/petstore.yaml',
+                        name: 'Local File 2',
+                    },
+                    {
+                        url: 'https://petstore3.swagger.io/api/v3/openapi.json',
+                        name: 'Petstore API',
+                    },
+                    {
+                        url: 'https://idratherbewriting.com/learnapidoc/docs/openapi_spec_and_generated_ref_docs/openapi_openweathermap.yml',
+                        name: 'OpenWeatherMap API',
+                    },
+                ],
+                dom_id: '#swagger-ui',
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                layout: "StandaloneLayout",
+            });
+        };
+    </script>
+</body>
+
+</html>
