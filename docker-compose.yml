@@ -1,13 +1,12 @@
-version: "3"
 services:
   builder:
-    image: electronuserland/builder:14-wine-01.22
+    image: electronuserland/builder:18-wine
     volumes:
       - ./:/project
-      - ./.cache/node_modules:/project/node_modules
-    environment:
-      ELECTRON_CACHE: "/project/.cache/electron"
-      ELECTRON_BUILDER_CACHE: "/project/.cache/electron-builder"
+    # Enable caching for faster rebuilds
+    # environment:
+    #   ELECTRON_CACHE: "/project/.cache/electron"
+    #   ELECTRON_BUILDER_CACHE: "/project/.cache/electron-builder"
     command: sh -c '
       npm install --loglevel=info &&
       npm run dist:linux &&
