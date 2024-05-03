@@ -15,23 +15,19 @@
     <script>
         window.onload = () => {
             window.ui = SwaggerUIBundle({
-                //url: 'https://petstore3.swagger.io/api/v3/openapi.json',
+                // url: 'https://petstore3.swagger.io/api/v3/openapi.json',
                 urls: [
                     {
                         url: 'api-files/openapi_openweathermap.yml',
-                        name: 'Local File 1',
+                        name: 'OpenWeatherMap API (Local file)',
                     },
                     {
                         url: 'api-files/petstore.yaml',
-                        name: 'Local File 2',
+                        name: 'Petstore API (Local file)',
                     },
                     {
                         url: 'https://petstore3.swagger.io/api/v3/openapi.json',
                         name: 'Petstore API',
-                    },
-                    {
-                        url: 'https://idratherbewriting.com/learnapidoc/docs/openapi_spec_and_generated_ref_docs/openapi_openweathermap.yml',
-                        name: 'OpenWeatherMap API',
                     },
                 ],
                 dom_id: '#swagger-ui',
