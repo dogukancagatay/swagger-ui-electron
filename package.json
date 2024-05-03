@@ -10,18 +10,19 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
     "dist:dir": "electron-builder build --dir",
     "dist:windows": "electron-builder build --x64 --windows",
     "dist:linux": "electron-builder build --x64 --linux",
     "dist:macos": "electron-builder build --x64 --macos"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "swagger-ui-dist": "^4.6.2"
   },
   "devDependencies": {
     "app-builder-bin-fixer": "4.1.0",
-    "electron-builder": "22.14.13",
-    "electron": "17.1.2"
+    "electron-builder": "24.13.3",
+    "electron": "30.0.2"
   }
 }
